@@ -217,6 +217,23 @@
       btn.addEventListener("click", () => applyProjectFilter(btn.dataset.filter));
     });
 
+    // Scroll reveal — one shot, section headers only.
+    // Guarded by prefers-reduced-motion (CSS also flattens it).
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!reduce && "IntersectionObserver" in window) {
+      const targets = document.querySelectorAll(".section h2, .section .section-lead");
+      targets.forEach(t => t.classList.add("reveal"));
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add("in-view");
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: "0px 0px -60px 0px" });
+      targets.forEach(t => io.observe(t));
+    }
+
     // Formspree fallback: if endpoint is placeholder, prevent submit and open mailto
     const form = document.getElementById("contact-form");
     if (form) {

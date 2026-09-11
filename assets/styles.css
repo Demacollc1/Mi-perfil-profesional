@@ -23,6 +23,14 @@
 
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas, monospace;
+
+  /* Motion tokens — from emilkowalski/skills/animate.
+     Native ease-out/in-out are too weak for UI. */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --dur-hover: 160ms;
+  --dur-press: 120ms;
+  --dur-reveal: 240ms;
 }
 
 [data-theme="dark"] {
@@ -71,9 +79,14 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--navy-900);
+  background: rgba(11, 31, 58, 0.85);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
   color: var(--text-inverse);
   border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+@supports not (backdrop-filter: blur(14px)) {
+  .site-header { background: var(--navy-900); }
 }
 .header-inner {
   display: flex;
@@ -113,9 +126,11 @@ body {
   color: rgba(247,248,251,0.8);
   text-decoration: none;
   font-size: 14px;
-  transition: color 0.15s;
+  transition: color var(--dur-hover) ease;
 }
-.site-nav a:hover { color: #fff; }
+@media (hover: hover) and (pointer: fine) {
+  .site-nav a:hover { color: #fff; }
+}
 .header-tools {
   display: flex;
   align-items: center;
@@ -135,9 +150,11 @@ body {
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.15s, color 0.15s;
+  transition: background var(--dur-hover) ease, color var(--dur-hover) ease;
 }
-.lang-switcher button:hover { color: #fff; }
+@media (hover: hover) and (pointer: fine) {
+  .lang-switcher button:hover { color: #fff; }
+}
 .lang-switcher button.active { background: var(--accent); color: #fff; }
 .theme-toggle {
   background: transparent;
@@ -149,7 +166,9 @@ body {
   cursor: pointer;
   font-size: 14px;
 }
-.theme-toggle:hover { color: #fff; }
+@media (hover: hover) and (pointer: fine) {
+  .theme-toggle:hover { color: #fff; }
+}
 
 @media (max-width: 780px) {
   .site-nav { display: none; }
@@ -235,14 +254,21 @@ body {
   text-decoration: none;
   border: 1px solid transparent;
   cursor: pointer;
-  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  transition:
+    background var(--dur-hover) ease,
+    border-color var(--dur-hover) ease,
+    color var(--dur-hover) ease,
+    transform var(--dur-press) var(--ease-out);
 }
+.btn:active { transform: scale(0.97); }
 .btn-primary { background: var(--accent); color: #fff; }
-.btn-primary:hover { background: var(--accent-hover); }
 .btn-ghost { background: rgba(255,255,255,0.1); color: #fff; }
-.btn-ghost:hover { background: rgba(255,255,255,0.18); }
 .btn-outline { background: transparent; color: #fff; border-color: rgba(255,255,255,0.35); }
-.btn-outline:hover { background: rgba(255,255,255,0.1); }
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover { background: var(--accent-hover); }
+  .btn-ghost:hover { background: rgba(255,255,255,0.18); }
+  .btn-outline:hover { background: rgba(255,255,255,0.1); }
+}
 
 /* ---------------- Sections ---------------- */
 .section { padding: 72px 0; }
@@ -270,9 +296,13 @@ body {
   border-radius: var(--radius);
   padding: 22px;
   box-shadow: var(--shadow-sm);
-  transition: transform 0.15s, box-shadow 0.15s;
+  transition:
+    transform var(--dur-hover) var(--ease-out),
+    box-shadow var(--dur-hover) var(--ease-out);
 }
-.pillar:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+@media (hover: hover) and (pointer: fine) {
+  .pillar:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+}
 .pillar-icon {
   color: var(--accent);
   font-size: 22px;
@@ -297,11 +327,16 @@ body {
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.15s;
+  transition:
+    color var(--dur-hover) ease,
+    background var(--dur-hover) ease,
+    border-color var(--dur-hover) ease;
 }
-.filter-bar button:hover {
-  color: var(--text);
-  border-color: var(--accent);
+@media (hover: hover) and (pointer: fine) {
+  .filter-bar button:hover {
+    color: var(--text);
+    border-color: var(--accent);
+  }
 }
 .filter-bar button.active {
   background: var(--navy-900);
@@ -324,9 +359,13 @@ body {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  transition: transform 0.15s, box-shadow 0.15s;
+  transition:
+    transform var(--dur-hover) var(--ease-out),
+    box-shadow var(--dur-hover) var(--ease-out);
 }
-.project-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+}
 .project-card[hidden] { display: none; }
 .project-head {
   display: flex;
@@ -609,7 +648,9 @@ body {
   color: var(--accent);
   text-decoration: none;
 }
-.contact-links a:hover { text-decoration: underline; }
+@media (hover: hover) and (pointer: fine) {
+  .contact-links a:hover { text-decoration: underline; }
+}
 
 /* Footer */
 .site-footer {
@@ -620,8 +661,63 @@ body {
   border-top: 1px solid rgba(255,255,255,0.06);
 }
 .site-footer a { color: var(--accent-soft); text-decoration: none; }
-.site-footer a:hover { text-decoration: underline; }
+@media (hover: hover) and (pointer: fine) {
+  .site-footer a:hover { text-decoration: underline; }
+}
 .footer-meta { margin: 8px 0 0; }
+
+/* ---------------- Motion ---------------- */
+/* Hero entrance — first-time delight. scale(0.98) + opacity, staggered.
+   Never scale(0). Only transform + opacity. Custom ease-out. */
+@keyframes hero-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.985); }
+  to   { opacity: 1; transform: translateY(0)   scale(1); }
+}
+.hero .eyebrow,
+.hero h1,
+.hero .role-line,
+.hero .lede,
+.hero .hero-metrics,
+.hero .hero-cta {
+  animation: hero-in var(--dur-reveal) var(--ease-out) both;
+}
+.hero .eyebrow     { animation-delay:   0ms; }
+.hero h1           { animation-delay:  40ms; }
+.hero .role-line   { animation-delay:  90ms; }
+.hero .lede        { animation-delay: 140ms; }
+.hero .hero-metrics{ animation-delay: 200ms; }
+.hero .hero-cta    { animation-delay: 260ms; }
+
+/* Scroll reveal — transitions (not keyframes) so retargeting works
+   on rapid scroll. Toggle .in-view via IntersectionObserver in app.js. */
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity var(--dur-reveal) var(--ease-out),
+    transform var(--dur-reveal) var(--ease-out);
+  will-change: opacity, transform;
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: none;
+}
+
+/* Reduced motion — gentler, not zero. Keep opacity fades, drop movement. */
+@media (prefers-reduced-motion: reduce) {
+  .hero .eyebrow,
+  .hero h1,
+  .hero .role-line,
+  .hero .lede,
+  .hero .hero-metrics,
+  .hero .hero-cta {
+    animation: none;
+  }
+  .reveal, .reveal.in-view { opacity: 1; transform: none; transition: none; }
+  .btn:active { transform: none; }
+  .pillar:hover, .project-card:hover { transform: none; }
+  * { animation-duration: 1ms !important; transition-duration: 1ms !important; }
+}
 
 /* Print */
 @media print {
