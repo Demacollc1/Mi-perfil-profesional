@@ -32,6 +32,7 @@
       if (strings[key] != null) el.innerHTML = strings[key];
     });
 
+    renderCapabilities(lang);
     renderProjects(lang, currentFilter);
     renderTimeline(lang);
     renderSkills(lang);
@@ -159,6 +160,24 @@
     renderProjects(lang, cat);
     document.querySelectorAll(".filter-bar button").forEach(btn => {
       btn.classList.toggle("active", btn.dataset.filter === cat);
+    });
+  }
+
+  function renderCapabilities(lang) {
+    const grid = document.getElementById("capability-grid");
+    if (!grid) return;
+    grid.innerHTML = "";
+    (data.capabilities || []).forEach(cap => {
+      const t = cap.lang[lang] || cap.lang.en;
+      grid.appendChild(el("article", { class: "capability" }, [
+        el("div", { class: "capability-head" }, [
+          el("span", { class: "capability-icon" }, [cap.icon || "◆"]),
+          el("h4", null, [t.title])
+        ]),
+        el("ul", { class: "capability-list" },
+          (t.items || []).map(item => el("li", null, [item]))
+        )
+      ]));
     });
   }
 

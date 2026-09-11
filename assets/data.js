@@ -31,6 +31,8 @@ window.PROFILE_DATA = {
       "value.p3.body": "Full P&L responsibility over a $35M+ distribution business: sales, marketing, warehousing, fleet, imports, credit, finance. Scrum, Lean Six Sigma, SOX/ITGC, KPI/BI.",
       "value.p4.title": "Civil Engineering & Real Estate",
       "value.p4.body": "BS Civil Engineering (FIU). $1M+ construction budgets: retail branches, distribution centers, residential builds. 15-property investment portfolio managed as realtor.",
+      "value.detailTitle": "In practice",
+      "value.detailLead": "Concrete capabilities inside each pillar. This is what an engagement actually looks like.",
       "projects.title": "Projects",
       "projects.lead": "Filter by category. Every card is a real project with measurable outcomes.",
       "projects.filter.all": "All", "projects.filter.ai": "AI & Claude",
@@ -83,6 +85,8 @@ window.PROFILE_DATA = {
       "value.p3.body": "P&L completo de un negocio de distribución de $35M+: ventas, marketing, bodega, flota, importaciones, crédito y finanzas. Scrum, Lean Six Sigma, SOX/ITGC, KPI/BI.",
       "value.p4.title": "Ingeniería Civil y Bienes Raíces",
       "value.p4.body": "Ing. Civil (FIU). Presupuestos de construcción de $1M+: sucursales retail, centros de distribución, viviendas. Portafolio propio de 15 inmuebles gestionado como Realtor.",
+      "value.detailTitle": "En la práctica",
+      "value.detailLead": "Capacidades concretas dentro de cada pilar. Esto es lo que realmente entrego en un engagement.",
       "projects.title": "Proyectos",
       "projects.lead": "Filtra por categoría. Cada tarjeta es un proyecto real con resultados medibles.",
       "projects.filter.all": "Todos", "projects.filter.ai": "IA y Claude",
@@ -135,6 +139,8 @@ window.PROFILE_DATA = {
       "value.p3.body": "P&L completo de um negócio de distribuição de $35M+: vendas, marketing, armazém, frota, importações, crédito e finanças. Scrum, Lean Six Sigma, SOX/ITGC, KPI/BI.",
       "value.p4.title": "Engenharia Civil e Imóveis",
       "value.p4.body": "Eng. Civil (FIU). Orçamentos de construção de $1M+: filiais de varejo, centros de distribuição, residências. Portfólio próprio de 15 imóveis administrado como Realtor.",
+      "value.detailTitle": "Na prática",
+      "value.detailLead": "Capacidades concretas dentro de cada pilar. É isto que entrego em um engagement.",
       "projects.title": "Projetos",
       "projects.lead": "Filtre por categoria. Cada card é um projeto real com resultados mensuráveis.",
       "projects.filter.all": "Todos", "projects.filter.ai": "IA e Claude",
@@ -1246,6 +1252,166 @@ window.PROFILE_DATA = {
         }
       },
       stack: ["Claude Code", "Promotion rules", "Campaign engine"]
+    }
+  ],
+
+  // ------------------------------------------------------------
+  // Capabilities — detailed breakdown per pillar
+  // Rendered under "In practice" below the 4 pillar cards.
+  // Every item is defensible against the CV inventory.
+  // ------------------------------------------------------------
+  capabilities: [
+    {
+      icon: "⚙",
+      lang: {
+        en: {
+          title: "ERP & Enterprise Systems",
+          items: [
+            "JD Edwards E1 9.1 → 9.2 upgrades — full 15-module scope",
+            "Orchestrator, UX One, UDOs, CafeOne, BI Publisher",
+            "Financials (GL/AP/AR/FA), Job Cost, Procurement, WMS, Sales Order",
+            "EDI X12 integration with key suppliers",
+            "Avalara / Vertex multi-jurisdiction tax engines",
+            "SOX / ITGC controls and change management"
+          ]
+        },
+        es: {
+          title: "ERP y Sistemas Empresariales",
+          items: [
+            "Upgrades JD Edwards E1 9.1 → 9.2 — 15 módulos",
+            "Orchestrator, UX One, UDOs, CafeOne, BI Publisher",
+            "Financials (GL/AP/AR/FA), Job Cost, Compras, WMS, Sales Order",
+            "Integración EDI X12 con proveedores clave",
+            "Motores fiscales Avalara / Vertex multi-jurisdicción",
+            "Controles SOX / ITGC y gestión del cambio"
+          ]
+        },
+        pt: {
+          title: "ERP e Sistemas Corporativos",
+          items: [
+            "Upgrades JD Edwards E1 9.1 → 9.2 — 15 módulos",
+            "Orchestrator, UX One, UDOs, CafeOne, BI Publisher",
+            "Financials (GL/AP/AR/FA), Job Cost, Compras, WMS, Sales Order",
+            "Integração EDI X12 com fornecedores-chave",
+            "Motores fiscais Avalara / Vertex multi-jurisdição",
+            "Controles SOX / ITGC e gestão da mudança"
+          ]
+        }
+      }
+    },
+    {
+      icon: "◇",
+      lang: {
+        en: {
+          title: "AI & Automation",
+          items: [
+            "Claude Code + Claude Cowork app development",
+            "RAG database design over 5,000+ SKUs and business rules",
+            "MCP servers self-hosted for private business data",
+            "N8N workflows connecting ERP, CRM, and logistics",
+            "Ollama for on-premise LLM inference (WhatsApp, Bitrix24)",
+            "Prompt engineering, AI agent design, evaluation systems"
+          ]
+        },
+        es: {
+          title: "IA y Automatización",
+          items: [
+            "Desarrollo de apps con Claude Code + Claude Cowork",
+            "Diseño de bases RAG sobre 5,000+ SKUs y reglas de negocio",
+            "Servidores MCP self-hosted para datos privados",
+            "Flujos N8N conectando ERP, CRM y logística",
+            "Ollama para inferencia LLM on-premise (WhatsApp, Bitrix24)",
+            "Prompt engineering, diseño de agentes IA, sistemas de evaluación"
+          ]
+        },
+        pt: {
+          title: "IA e Automação",
+          items: [
+            "Desenvolvimento de apps com Claude Code + Claude Cowork",
+            "Design de bases RAG sobre 5.000+ SKUs e regras de negócio",
+            "Servidores MCP self-hosted para dados privados",
+            "Fluxos N8N conectando ERP, CRM e logística",
+            "Ollama para inferência LLM on-premise (WhatsApp, Bitrix24)",
+            "Prompt engineering, design de agentes de IA, sistemas de avaliação"
+          ]
+        }
+      }
+    },
+    {
+      icon: "▲",
+      lang: {
+        en: {
+          title: "Operations & Strategy",
+          items: [
+            "Full P&L ownership of a $35M+ distribution business",
+            "Cross-functional leadership across 250+ employees, 9 branches",
+            "KPI / dashboard design in Tableau (finance, sales, ops, logistics)",
+            "Agile / Scrum project management + change management",
+            "Lean Six Sigma continuous-improvement methodology",
+            "COOP vendor budget management ($20K+/month allocated)"
+          ]
+        },
+        es: {
+          title: "Operaciones y Estrategia",
+          items: [
+            "P&L completo de un negocio de distribución $35M+",
+            "Liderazgo cross-funcional de 250+ empleados y 9 sucursales",
+            "Diseño de KPI / dashboards en Tableau (finanzas, ventas, ops, logística)",
+            "Gestión de proyectos Agile / Scrum + gestión del cambio",
+            "Metodología Lean Six Sigma de mejora continua",
+            "Gestión de presupuestos COOP con proveedores ($20K+/mes)"
+          ]
+        },
+        pt: {
+          title: "Operações e Estratégia",
+          items: [
+            "P&L completo de um negócio de distribuição $35M+",
+            "Liderança cross-funcional de 250+ colaboradores e 9 filiais",
+            "Design de KPI / dashboards em Tableau (financeiro, vendas, ops, logística)",
+            "Gestão de projetos Agile / Scrum + gestão da mudança",
+            "Metodologia Lean Six Sigma de melhoria contínua",
+            "Gestão de verbas COOP com fornecedores ($20K+/mês)"
+          ]
+        }
+      }
+    },
+    {
+      icon: "◈",
+      lang: {
+        en: {
+          title: "Civil Engineering & Real Estate",
+          items: [
+            "BS Civil Engineering — Water Resources emphasis (FIU)",
+            "$1M+ construction budgets under management",
+            "AutoCAD, SketchUp, Bluebeam, MS Project, Primavera P6",
+            "5,000+ m² distribution-center design (4 loading + 4 unloading docks)",
+            "Retail branch remodels and residential builds for resale",
+            "Florida Realtor License — 15-property investment portfolio"
+          ]
+        },
+        es: {
+          title: "Ingeniería Civil y Bienes Raíces",
+          items: [
+            "Ing. Civil — Énfasis en Recursos Hídricos (FIU)",
+            "Presupuestos de construcción de $1M+ administrados",
+            "AutoCAD, SketchUp, Bluebeam, MS Project, Primavera P6",
+            "Diseño de CDI de 5,000+ m² (4 muelles de carga + 4 descarga)",
+            "Remodelaciones de sucursales retail y viviendas para reventa",
+            "Florida Realtor License — portafolio propio de 15 inmuebles"
+          ]
+        },
+        pt: {
+          title: "Engenharia Civil e Imóveis",
+          items: [
+            "Eng. Civil — Ênfase em Recursos Hídricos (FIU)",
+            "Orçamentos de construção de $1M+ administrados",
+            "AutoCAD, SketchUp, Bluebeam, MS Project, Primavera P6",
+            "Projeto de CDI de 5.000+ m² (4 docas de carga + 4 descarga)",
+            "Reformas de filiais varejo e residências para revenda",
+            "Florida Realtor License — portfólio próprio de 15 imóveis"
+          ]
+        }
+      }
     }
   ],
 

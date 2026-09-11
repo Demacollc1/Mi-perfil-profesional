@@ -311,6 +311,81 @@ body {
 .pillar h3 { font-size: 16px; margin: 0 0 8px; }
 .pillar p { color: var(--text-muted); margin: 0; font-size: 14px; }
 
+/* "In practice" — expanded capabilities per pillar */
+.capabilities {
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+.capabilities-title {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin: 0 0 8px;
+  font-weight: 700;
+}
+.capabilities-lead {
+  color: var(--text-muted);
+  margin: 0 0 24px;
+  max-width: 780px;
+  font-size: 14px;
+}
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+.capability {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+.capability-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.capability-icon {
+  color: var(--accent);
+  font-size: 20px;
+  line-height: 1;
+}
+.capability h4 {
+  font-size: 15px;
+  margin: 0;
+  color: var(--text);
+}
+.capability-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.capability-list li {
+  font-size: 13px;
+  color: var(--text-muted);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.45;
+}
+.capability-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
 /* Filter bar */
 .filter-bar {
   display: flex;
