@@ -44,7 +44,15 @@ Mientras esté como placeholder, el form abre `mailto:demacollc@gmail.com` como 
 
 ## Publicar en GitHub Pages
 
-Settings → Pages → Source: `main` branch, folder `/` (root). Listo.
+Ya hay un workflow de GitHub Actions (`.github/workflows/pages.yml`) que despliega el sitio en cada push a `main`.
+
+**Paso único de activación (una sola vez):**
+
+1. Ir a `Settings` → `Pages` en el repo
+2. En `Build and deployment` → `Source`, seleccionar **GitHub Actions**
+3. Guardar
+
+Después de eso, cada push a `main` publica el sitio en `https://demacollc1.github.io/Mi-perfil-profesional/`. Para desplegar manualmente sin push, ir a `Actions` → `Deploy to GitHub Pages` → `Run workflow`.
 
 ## Categorías de proyectos
 
