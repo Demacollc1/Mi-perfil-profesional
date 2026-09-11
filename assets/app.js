@@ -32,7 +32,7 @@
       if (strings[key] != null) el.innerHTML = strings[key];
     });
 
-    renderProjects(lang);
+    renderProjects(lang, currentFilter);
     renderTimeline(lang);
     renderSkills(lang);
     renderEducation(lang);
@@ -82,40 +82,80 @@
     return node;
   }
 
-  function renderProjects(lang) {
+  const CAT_ORDER = ["ai", "erp", "bi", "tms", "sales", "construction"];
+  const CAT_LABEL = {
+    en: { ai: "AI & Claude", erp: "JD Edwards / ERP", bi: "BI & Analytics",
+          tms: "Logistics / TMS", sales: "Sales / CRM", construction: "Construction" },
+    es: { ai: "IA y Claude", erp: "JD Edwards / ERP", bi: "BI y Analítica",
+          tms: "Logística / TMS", sales: "Ventas / CRM", construction: "Construcción" },
+    pt: { ai: "IA e Claude", erp: "JD Edwards / ERP", bi: "BI e Analytics",
+          tms: "Logística / TMS", sales: "Vendas / CRM", construction: "Construção" }
+  };
+
+  function makeCard(p, lang) {
+    const t = p.lang[lang] || p.lang.en;
+    const primaryCat = Array.isArray(p.category) ? p.category[0] : p.category;
+    return el("article", {
+      class: "project-card",
+      "data-cats": (Array.isArray(p.category) ? p.category.join(" ") : p.category)
+    }, [
+      el("div", { class: "project-head" }, [
+        el("h3", null, [t.title]),
+        el("span", { class: "project-tag" }, [primaryCat.toUpperCase()])
+      ]),
+      el("p", { class: "project-meta" }, [t.meta]),
+      el("p", null, [t.summary]),
+      el("ul", { class: "project-bullets" },
+        (t.bullets || []).map(b => el("li", null, [b]))
+      ),
+      el("div", { class: "project-stack" },
+        (p.stack || []).map(s => el("span", { class: "stack-tag" }, [s]))
+      )
+    ]);
+  }
+
+  function renderProjects(lang, filter) {
     const grid = document.getElementById("projects-grid");
     if (!grid) return;
     grid.innerHTML = "";
-    data.projects.forEach(p => {
-      const t = p.lang[lang] || p.lang.en;
-      const primaryCat = Array.isArray(p.category) ? p.category[0] : p.category;
-      const card = el("article", {
-        class: "project-card",
-        "data-cats": (Array.isArray(p.category) ? p.category.join(" ") : p.category)
-      }, [
-        el("div", { class: "project-head" }, [
-          el("h3", null, [t.title]),
-          el("span", { class: "project-tag" }, [primaryCat.toUpperCase()])
-        ]),
-        el("p", { class: "project-meta" }, [t.meta]),
-        el("p", null, [t.summary]),
-        el("ul", { class: "project-bullets" },
-          (t.bullets || []).map(b => el("li", null, [b]))
-        ),
-        el("div", { class: "project-stack" },
-          (p.stack || []).map(s => el("span", { class: "stack-tag" }, [s]))
-        )
-      ]);
-      grid.appendChild(card);
-    });
+    const cur = filter || "all";
+
+    if (cur === "all") {
+      // Grouped view: one section per category, projects sorted newest first.
+      CAT_ORDER.forEach(cat => {
+        const inCat = data.projects.filter(p => {
+          const cats = Array.isArray(p.category) ? p.category : [p.category];
+          return cats.includes(cat);
+        }).sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+        if (inCat.length === 0) return;
+
+        const label = (CAT_LABEL[lang] || CAT_LABEL.en)[cat];
+        grid.appendChild(el("div", { class: "cat-group" }, [
+          el("h3", { class: "cat-title" }, [
+            el("span", { class: "cat-title-label" }, [label]),
+            el("span", { class: "cat-title-count" }, [String(inCat.length)])
+          ]),
+          el("div", { class: "cat-grid" },
+            inCat.map(p => makeCard(p, lang))
+          )
+        ]));
+      });
+    } else {
+      // Filtered view: flat grid of just that category.
+      const inCat = data.projects.filter(p => {
+        const cats = Array.isArray(p.category) ? p.category : [p.category];
+        return cats.includes(cur);
+      }).sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+      const flat = el("div", { class: "cat-grid" }, inCat.map(p => makeCard(p, lang)));
+      grid.appendChild(flat);
+    }
   }
 
+  let currentFilter = "all";
   function applyProjectFilter(cat) {
-    document.querySelectorAll(".project-card").forEach(card => {
-      const cats = (card.dataset.cats || "").split(" ");
-      const show = cat === "all" || cats.includes(cat);
-      card.hidden = !show;
-    });
+    currentFilter = cat;
+    const lang = document.documentElement.lang || "en";
+    renderProjects(lang, cat);
     document.querySelectorAll(".filter-bar button").forEach(btn => {
       btn.classList.toggle("active", btn.dataset.filter === cat);
     });

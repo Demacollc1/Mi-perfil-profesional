@@ -535,6 +535,714 @@ window.PROFILE_DATA = {
         }
       },
       stack: ["Claude Code", "HTML", "CSS", "JavaScript", "GitHub Pages"]
+    },
+
+    // ============================================================
+    // Claude Code portfolio — 18 projects extracted from the
+    // Demacollc1 GitHub org + Claude Code session inventory.
+    // Grouped by primary category in the UI.
+    // ============================================================
+
+    {
+      id: "pick-to-light",
+      category: ["tms", "ai"],
+      date: "2026",
+      lang: {
+        en: {
+          title: "Pick-to-Light / Pick-to-Screen — WMS guidance system",
+          meta: "Demaco · Jul 2026 – Present",
+          summary: "Screen-guided picking and packing system for warehouse operators. Four coordinated frontends: picker, training, WMS hub, and gamified onboarding.",
+          bullets: [
+            "Frontends: embalador_frontend (operator), capacitacion (training), hub_wms, juego_wms",
+            "CSV bulk-load admin screen for master data",
+            "Staged rollout with human-in-the-loop QA"
+          ]
+        },
+        es: {
+          title: "Pick-to-Light / Pick-to-Screen — Sistema de guía WMS",
+          meta: "Demaco · Jul 2026 – Actual",
+          summary: "Sistema de picking y empaque guiado por pantalla para bodega. Cuatro frontends coordinados: embalador, capacitación, hub WMS y onboarding gamificado.",
+          bullets: [
+            "Frontends: embalador_frontend, capacitacion, hub_wms, juego_wms",
+            "Pantalla admin de carga masiva CSV para datos maestros",
+            "Despliegue por etapas con QA humano en el loop"
+          ]
+        },
+        pt: {
+          title: "Pick-to-Light / Pick-to-Screen — Guia WMS",
+          meta: "Demaco · Jul 2026 – Atual",
+          summary: "Sistema de picking e embalagem guiado por tela para armazém. Quatro frontends coordenados: separador, treinamento, hub WMS e onboarding gamificado.",
+          bullets: [
+            "Frontends: embalador_frontend, capacitacion, hub_wms, juego_wms",
+            "Tela admin de carga CSV em massa para dados-mestre",
+            "Rollout em etapas com QA humano no loop"
+          ]
+        }
+      },
+      stack: ["Claude Code", "WMS", "Frontend", "CSV pipeline"]
+    },
+
+    {
+      id: "finance-pro",
+      category: ["bi", "erp"],
+      date: "2026",
+      lang: {
+        en: {
+          title: "Finance Pro — Cash & bank reconciliation backend",
+          meta: "Demaco · Jul – Aug 2026",
+          summary: "Backend for daily cash management and bank reconciliation, replacing manual spreadsheets in the finance department.",
+          bullets: [
+            "Cash-flow ingestion, closing, and multi-account reconciliation",
+            "Integrates with JDE for GL posting",
+            "Runs locally on port 3000; backend refactored from prototype"
+          ]
+        },
+        es: {
+          title: "Finance Pro — Backend de cajas y conciliaciones",
+          meta: "Demaco · Jul – Ago 2026",
+          summary: "Backend para gestión diaria de caja y conciliación bancaria que reemplaza hojas de cálculo manuales en el departamento de finanzas.",
+          bullets: [
+            "Ingesta de flujo de caja, cierres y conciliación multi-cuenta",
+            "Integración con JDE para asientos contables",
+            "Corre local en puerto 3000; backend refactorizado desde prototipo"
+          ]
+        },
+        pt: {
+          title: "Finance Pro — Backend de caixas e conciliações",
+          meta: "Demaco · Jul – Ago 2026",
+          summary: "Backend para gestão diária de caixa e conciliação bancária que substitui planilhas manuais no departamento financeiro.",
+          bullets: [
+            "Ingestão de fluxo de caixa, fechamentos e conciliação multi-conta",
+            "Integração com JDE para lançamentos contábeis",
+            "Roda local na porta 3000; backend refatorado a partir do protótipo"
+          ]
+        }
+      },
+      stack: ["Claude Code", "Node.js backend", "JDE E1", "PostgreSQL"]
+    },
+
+    {
+      id: "rutafleet-tms",
+      category: ["tms"],
+      date: "2026",
+      lang: {
+        en: {
+          title: "RutaFleet TMS — Drivin functional replica",
+          meta: "Demaco · Jul 2026",
+          summary: "In-house TMS built as a functional replica of Drivin to own the routing and dispatch loop without vendor lock-in.",
+          bullets: [
+            "Route planning, dispatch, and delivery tracking core",
+            "Runs locally alongside Finance Pro",
+            "Built with Claude Fable for rapid frontend iteration"
+          ]
+        },
+        es: {
+          title: "RutaFleet TMS — Réplica funcional de Drivin",
+          meta: "Demaco · Jul 2026",
+          summary: "TMS in-house construido como réplica funcional de Drivin para dueñarse el loop de ruteo y despacho sin lock-in de proveedor.",
+          bullets: [
+            "Core de planificación de rutas, despacho y seguimiento",
+            "Corre local junto a Finance Pro",
+            "Construido con Claude Fable para iteración rápida de frontend"
+          ]
+        },
+        pt: {
+          title: "RutaFleet TMS — Réplica funcional do Drivin",
+          meta: "Demaco · Jul 2026",
+          summary: "TMS interno construído como réplica funcional do Drivin para assumir o loop de roteirização e despacho sem lock-in de fornecedor.",
+          bullets: [
+            "Core de planejamento de rotas, despacho e rastreamento",
+            "Roda local junto ao Finance Pro",
+            "Construído com Claude Fable para iteração rápida de frontend"
+          ]
+        }
+      },
+      stack: ["Claude Code", "Claude Fable", "TMS core", "Route optimization"]
+    },
+
+    {
+      id: "pricing-motor",
+      category: ["bi", "sales", "erp"],
+      date: "2026",
+      lang: {
+        en: {
+          title: "Costs, PVP & Pricing Engine — Demaco control panel",
+          meta: "Demaco · Jul 2026",
+          summary: "Two production artifacts: a cost/PVP-per-warehouse reviewer, and a full pricing panel with commercial-policy engine.",
+          bullets: [
+            "Artifact 1: Cost & PVP reviewer per branch and warehouse",
+            "Artifact 2: Full pricing panel with rule-based motor",
+            "Feeds Tableau sources; sourced directly from JDE tables"
+          ]
+        },
+        es: {
+          title: "Costos, PVP y Motor de Precios — Panel Demaco",
+          meta: "Demaco · Jul 2026",
+          summary: "Dos artifacts en producción: revisor de costos/PVP por bodega y panel completo de precios con motor de política comercial.",
+          bullets: [
+            "Artifact 1: Revisor de costos y PVP por sucursal y bodega",
+            "Artifact 2: Panel completo de precios con motor de reglas",
+            "Alimenta fuentes de Tableau; extrae directo de tablas JDE"
+          ]
+        },
+        pt: {
+          title: "Custos, PVP e Motor de Preços — Painel Demaco",
+          meta: "Demaco · Jul 2026",
+          summary: "Dois artifacts em produção: revisor de custos/PVP por armazém e painel completo de preços com motor de política comercial.",
+          bullets: [
+            "Artifact 1: Revisor de custos e PVP por filial e armazém",
+            "Artifact 2: Painel completo de preços com motor de regras",
+            "Alimenta fontes do Tableau; extrai direto de tabelas JDE"
+          ]
+        }
+      },
+      stack: ["Claude Code", "Tableau", "JDE E1", "Artifact frames"]
+    },
+
+    {
+      id: "jde-pricing-csv",
+      category: ["erp"],
+      date: "2026",
+      lang: {
+        en: {
+          title: "JD Edwards pricing CSV generator",
+          meta: "Demaco · Jul 2026",
+          summary: "CSV export pipeline that generates JDE-ready pricing files for bulk load, replacing hand-crafted uploads.",
+          bullets: [
+            "Direct extraction from JDE pricing tables",
+            "Format-compliant CSV output for bulk load templates",
+            "Foundation for the pricing audit tool"
+          ]
+        },
+        es: {
+          title: "Generador CSV de precios JD Edwards",
+          meta: "Demaco · Jul 2026",
+          summary: "Pipeline de exportación CSV que genera archivos de precios listos para carga masiva en JDE, reemplazando cargas artesanales.",
+          bullets: [
+            "Extracción directa desde tablas de precios de JDE",
+            "Salida CSV formato-válido para plantillas de carga masiva",
+            "Base para la herramienta de auditoría de precios"
+          ]
+        },
+        pt: {
+          title: "Gerador CSV de preços JD Edwards",
+          meta: "Demaco · Jul 2026",
+          summary: "Pipeline de exportação CSV que gera arquivos de preços prontos para carga em massa no JDE, substituindo cargas manuais.",
+          bullets: [
+            "Extração direta das tabelas de preços do JDE",
+            "Saída CSV compatível com templates de carga em massa",
+            "Base para a ferramenta de auditoria de preços"
+          ]
+        }
+      },
+      stack: ["Claude Code", "JDE E1", "CSV pipeline", "Python"]
+    },
+
+    {
+      id: "route-planner",
+      category: ["sales", "tms"],
+      date: "2026",
+      lang: {
+        en: {
+          title: "Sales route planner — Field-force scheduler",
+          meta: "Demaco · Jul 2026 · Published on GitHub Pages",
+          summary: "Live scheduler for the field-sales team's visit routing. Published as a static site consumed by supervisors from any device.",
+          bullets: [
+            "Deployed at demacollc1.github.io/planeacionderuta/",
+            "Weekly visit agenda with route sequencing",
+            "Feeds Bitrix24 CRM for follow-up"
+          ]
+        },
+        es: {
+          title: "Planeación de rutas de ventas — Programador de fuerza de campo",
+          meta: "Demaco · Jul 2026 · Publicado en GitHub Pages",
+          summary: "Programador en vivo para el ruteo de visitas del equipo de ventas en campo. Publicado como sitio estático consumible desde cualquier dispositivo.",
+          bullets: [
+            "Desplegado en demacollc1.github.io/planeacionderuta/",
+            "Agenda semanal de visitas con secuenciación de ruta",
+            "Alimenta Bitrix24 CRM para seguimiento"
+          ]
+        },
+        pt: {
+          title: "Planejamento de rotas de vendas — Scheduler de campo",
+          meta: "Demaco · Jul 2026 · Publicado no GitHub Pages",
+          summary: "Scheduler ao vivo para roteirização de visitas do time de vendas em campo. Publicado como site estático consumível de qualquer dispositivo.",
+          bullets: [
+            "Publicado em demacollc1.github.io/planeacionderuta/",
+            "Agenda semanal de visitas com sequenciamento de rota",
+            "Alimenta Bitrix24 CRM para follow-up"
+          ]
+        }
+      },
+      stack: ["Claude Code", "GitHub Pages", "Bitrix24", "HTML/JS"]
+    },
+
+    {
+      id: "financial-analysis",
+      category: ["bi"],
+      date: "2026",
+      lang: {
+        en: {
+          title: "Financial analysis by location — Branch P&L reporter",
+          meta: "Demaco · Jun 2026",
+          summary: "Automated financial analysis and PDF report generator that breaks down company financials by branch and cost center.",
+          bullets: [
+            "Multi-branch P&L, margin, and expense breakdown",
+            "Auto-generated PDF reports committed to the repo",
+            "Repeatable pipeline for monthly close"
+          ]
+        },
+        es: {
+          title: "Análisis financiero por sucursal — Reporte P&L por local",
+          meta: "Demaco · Jun 2026",
+          summary: "Análisis financiero y generador de reportes PDF automatizado que desglosa los estados financieros por sucursal y centro de costo.",
+          bullets: [
+            "P&L, margen y gasto multi-sucursal",
+            "Reportes PDF auto-generados versionados en el repo",
+            "Pipeline repetible para cierre mensual"
+          ]
+        },
+        pt: {
+          title: "Análise financeira por filial — Reporte P&L",
+          meta: "Demaco · Jun 2026",
+          summary: "Análise financeira e gerador de relatórios PDF automatizado que segmenta demonstrativos por filial e centro de custo.",
+          bullets: [
+            "P&L, margem e despesa multi-filial",
+            "Relatórios PDF auto-gerados versionados no repo",
+            "Pipeline repetível para fechamento mensal"
+          ]
+        }
+      },
+      stack: ["Claude Code", "PDF generation", "Financial reporting"]
+    },
+
+    {
+      id: "doc-manager",
+      category: ["tms"],
+      date: "2026",
+      lang: {
+        en: {
+          title: "Warehouse document manager — Digital archive",
+          meta: "Demaco · Jun – Jul 2026",
+          summary: "Cloud-verified document management system for warehouse operations: receipts, PODs, transfers, and adjustments.",
+          bullets: [
+            "Cloud bundle + verification pipeline",
+            "Structured archive of warehouse operational documents",
+            "Foundation for compliance and audit trails"
+          ]
+        },
+        es: {
+          title: "Gestor documental de bodega — Archivo digital",
+          meta: "Demaco · Jun – Jul 2026",
+          summary: "Sistema de gestión documental verificado en la nube para operaciones de bodega: recibos, POD, transferencias y ajustes.",
+          bullets: [
+            "Bundle en la nube + pipeline de verificación",
+            "Archivo estructurado de documentos operativos de bodega",
+            "Base para trazabilidad de compliance y auditoría"
+          ]
+        },
+        pt: {
+          title: "Gestor documental de armazém — Arquivo digital",
+          meta: "Demaco · Jun – Jul 2026",
+          summary: "Sistema de gestão documental verificado na nuvem para operações de armazém: recibos, POD, transferências e ajustes.",
+          bullets: [
+            "Bundle em nuvem + pipeline de verificação",
+            "Arquivo estruturado de documentos operacionais de armazém",
+            "Base para rastreabilidade de compliance e auditoria"
+          ]
+        }
+      },
+      stack: ["Claude Code", "Cloud storage", "Document indexing"]
+    },
+
+    {
+      id: "bitrix-n8n-ollama",
+      category: ["ai", "sales"],
+      date: "2026",
+      lang: {
+        en: {
+          title: "Bitrix24 + N8N + Ollama — Self-hosted CRM AI",
+          meta: "Demaco · Jun – Sep 2026",
+          summary: "Self-hosted AI stack orchestrating Bitrix24 CRM with N8N workflows and Ollama LLMs — including a WhatsApp integration for customer conversations.",
+          bullets: [
+            "OpenClaw-Setup base for the self-hosted stack",
+            "N8N flows connecting Bitrix24 events to Ollama models",
+            "WhatsApp API integration for two-way client messaging"
+          ]
+        },
+        es: {
+          title: "Bitrix24 + N8N + Ollama — IA self-hosted para CRM",
+          meta: "Demaco · Jun – Sep 2026",
+          summary: "Stack de IA self-hosted que orquesta Bitrix24 CRM con flujos N8N y LLMs Ollama — incluye integración WhatsApp para conversaciones con clientes.",
+          bullets: [
+            "Base OpenClaw-Setup para el stack self-hosted",
+            "Flujos N8N que conectan eventos de Bitrix24 con modelos Ollama",
+            "Integración WhatsApp API para mensajería bidireccional con clientes"
+          ]
+        },
+        pt: {
+          title: "Bitrix24 + N8N + Ollama — IA self-hosted para CRM",
+          meta: "Demaco · Jun – Set 2026",
+          summary: "Stack de IA self-hosted que orquestra Bitrix24 CRM com fluxos N8N e LLMs Ollama — inclui integração WhatsApp para conversas com clientes.",
+          bullets: [
+            "Base OpenClaw-Setup para o stack self-hosted",
+            "Fluxos N8N conectando eventos do Bitrix24 a modelos Ollama",
+            "Integração WhatsApp API para mensageria bidirecional"
+          ]
+        }
+      },
+      stack: ["Claude Code", "Bitrix24", "N8N", "Ollama", "WhatsApp API", "Docker"]
+    },
+
+    {
+      id: "seeworld-site",
+      category: ["sales"],
+      date: "2026",
+      lang: {
+        en: {
+          title: "SeeWorld — GPS tracker commercial site",
+          meta: "May – Sep 2026 · Live",
+          summary: "Full commercial site for a GPS asset-tracker product line: hero carousel, product cards, fleet & enterprise pages, contact routing.",
+          bullets: [
+            "Multi-page: /empresa, /flotas, /contacto, product cards",
+            "Hero carousel, scroll effects, tuned eyebrows",
+            "9-point verification checklist for launch"
+          ]
+        },
+        es: {
+          title: "SeeWorld — Sitio comercial de rastreadores GPS",
+          meta: "May – Sep 2026 · En vivo",
+          summary: "Sitio comercial completo para una línea de rastreadores GPS: carrusel hero, cards de producto, páginas de flotas y empresa, ruteo de contacto.",
+          bullets: [
+            "Multi-página: /empresa, /flotas, /contacto, cards de producto",
+            "Carrusel hero, efectos de scroll, eyebrows tuneados",
+            "Checklist de verificación de 9 puntos para lanzamiento"
+          ]
+        },
+        pt: {
+          title: "SeeWorld — Site comercial de rastreadores GPS",
+          meta: "Mai – Set 2026 · No ar",
+          summary: "Site comercial completo para linha de rastreadores GPS: carrossel hero, cards de produto, páginas de frotas e empresa, roteamento de contato.",
+          bullets: [
+            "Multipágina: /empresa, /flotas, /contacto, cards de produto",
+            "Carrossel hero, efeitos de scroll, eyebrows ajustados",
+            "Checklist de verificação de 9 pontos para lançamento"
+          ]
+        }
+      },
+      stack: ["Claude Code", "HTML/CSS/JS", "Multi-page site"]
+    },
+
+    {
+      id: "airbnb-automation",
+      category: ["ai"],
+      date: "2026",
+      lang: {
+        en: {
+          title: "Multi-property Airbnb automation",
+          meta: "Personal · May – Sep 2026",
+          summary: "Docker-composed automation stack for managing multiple short-term rental properties: pricing, guest messaging, and calendar sync.",
+          bullets: [
+            "Docker Compose + PostgreSQL backend",
+            "Multi-property state synchronization",
+            "Ongoing personal-portfolio project"
+          ]
+        },
+        es: {
+          title: "Automatización Airbnb multi-propiedad",
+          meta: "Personal · May – Sep 2026",
+          summary: "Stack de automatización con Docker Compose para gestionar múltiples propiedades de renta corta: pricing, mensajería a huésped y sincronía de calendario.",
+          bullets: [
+            "Backend Docker Compose + PostgreSQL",
+            "Sincronía de estado multi-propiedad",
+            "Proyecto continuo de portafolio personal"
+          ]
+        },
+        pt: {
+          title: "Automação Airbnb multi-imóvel",
+          meta: "Pessoal · Mai – Set 2026",
+          summary: "Stack de automação com Docker Compose para gerenciar múltiplos imóveis de aluguel curto: precificação, mensageria e sincronia de calendário.",
+          bullets: [
+            "Backend Docker Compose + PostgreSQL",
+            "Sincronia de estado multi-imóvel",
+            "Projeto contínuo de portfólio pessoal"
+          ]
+        }
+      },
+      stack: ["Claude Code", "Docker", "PostgreSQL", "Airbnb API"]
+    },
+
+    {
+      id: "invoice-ocr",
+      category: ["erp", "ai"],
+      date: "2026",
+      lang: {
+        en: {
+          title: "Invoice OCR + reconciliation",
+          meta: "Demaco · Jun 2026",
+          summary: "OCR-based invoice scanner integrated with reconciliation logic — reads supplier invoices and matches them against POs and payments.",
+          bullets: [
+            "OCR pipeline for invoice text extraction",
+            "Match against JDE PO and AP records",
+            "Phased approach: prototype → real API integration"
+          ]
+        },
+        es: {
+          title: "OCR de facturas + conciliación",
+          meta: "Demaco · Jun 2026",
+          summary: "Lector de facturas basado en OCR integrado con lógica de conciliación — lee facturas de proveedor y las matchea contra OC y pagos.",
+          bullets: [
+            "Pipeline OCR para extracción de texto de facturas",
+            "Match contra registros de OC y CP en JDE",
+            "Enfoque por fases: prototipo → integración con APIs reales"
+          ]
+        },
+        pt: {
+          title: "OCR de notas + conciliação",
+          meta: "Demaco · Jun 2026",
+          summary: "Leitor de notas fiscais baseado em OCR integrado à lógica de conciliação — lê notas de fornecedor e cruza com pedidos e pagamentos.",
+          bullets: [
+            "Pipeline OCR para extração de texto de notas",
+            "Cruzamento contra pedidos e contas a pagar no JDE",
+            "Abordagem em fases: protótipo → integração com APIs reais"
+          ]
+        }
+      },
+      stack: ["Claude Code", "OCR", "JDE E1", "Reconciliation logic"]
+    },
+
+    {
+      id: "backorder-purchasing",
+      category: ["erp"],
+      date: "2026",
+      lang: {
+        en: {
+          title: "Backorder & purchasing — Demand-driven procurement",
+          meta: "Demaco · Aug 2026",
+          summary: "Backorder tracker and purchasing helper that surfaces stock-outs and drives replenishment decisions.",
+          bullets: [
+            "Backorder visibility across branches",
+            "Purchase-order suggestion pipeline",
+            "Feeds the JDE procurement module"
+          ]
+        },
+        es: {
+          title: "Backorder y compras — Abastecimiento por demanda",
+          meta: "Demaco · Ago 2026",
+          summary: "Tracker de backorder y asistente de compras que visibiliza quiebres de stock y dirige decisiones de reposición.",
+          bullets: [
+            "Visibilidad de backorder por sucursal",
+            "Pipeline de sugerencia de órdenes de compra",
+            "Alimenta el módulo de compras de JDE"
+          ]
+        },
+        pt: {
+          title: "Backorder e compras — Abastecimento por demanda",
+          meta: "Demaco · Ago 2026",
+          summary: "Tracker de backorder e assistente de compras que dá visibilidade a rupturas de estoque e orienta decisões de reposição.",
+          bullets: [
+            "Visibilidade de backorder por filial",
+            "Pipeline de sugestão de ordens de compra",
+            "Alimenta o módulo de compras do JDE"
+          ]
+        }
+      },
+      stack: ["Claude Code", "JDE E1", "Demand planning"]
+    },
+
+    {
+      id: "payroll-app",
+      category: ["erp"],
+      date: "2026",
+      lang: {
+        en: {
+          title: "Payroll app — In-house HR automation",
+          meta: "Demaco · Jul 2026",
+          summary: "Payroll application handling time tracking, overtime authorizations, vacation, and labor-law compliance for the workforce.",
+          bullets: [
+            "Time-tracking and overtime approval workflow",
+            "Vacation and leave management",
+            "Labor-compliance rule engine"
+          ]
+        },
+        es: {
+          title: "Aplicativo de nómina — Automatización de RRHH in-house",
+          meta: "Demaco · Jul 2026",
+          summary: "Aplicativo de nómina que gestiona marcaciones, autorizaciones de horas extra, vacaciones y cumplimiento de normativa laboral.",
+          bullets: [
+            "Flujo de marcaciones y aprobación de horas extra",
+            "Gestión de vacaciones y ausencias",
+            "Motor de reglas de compliance laboral"
+          ]
+        },
+        pt: {
+          title: "App de folha — Automação de RH in-house",
+          meta: "Demaco · Jul 2026",
+          summary: "Aplicativo de folha que gerencia marcações, autorizações de horas extras, férias e conformidade com legislação trabalhista.",
+          bullets: [
+            "Fluxo de marcações e aprovação de horas extras",
+            "Gestão de férias e ausências",
+            "Motor de regras de compliance trabalhista"
+          ]
+        }
+      },
+      stack: ["Claude Code", "Payroll rules", "HR workflows"]
+    },
+
+    {
+      id: "cash-credit",
+      category: ["erp", "bi"],
+      date: "2026",
+      lang: {
+        en: {
+          title: "Cash & credit — Demaco",
+          meta: "Demaco · Sep 2026",
+          summary: "Cash and credit management extension: customer credit lines, collection follow-up, and cash-flow forecasting.",
+          bullets: [
+            "Credit-line assignment and utilization tracking",
+            "Collection agenda and delinquency alerts",
+            "Cash-flow forecast fed into Finance Pro"
+          ]
+        },
+        es: {
+          title: "Caja y créditos — Demaco",
+          meta: "Demaco · Sep 2026",
+          summary: "Extensión de gestión de caja y créditos: líneas de crédito de cliente, gestión de cobranzas y forecast de flujo de caja.",
+          bullets: [
+            "Asignación de línea de crédito y seguimiento de uso",
+            "Agenda de cobranza y alertas de vencimiento",
+            "Forecast de flujo de caja que alimenta Finance Pro"
+          ]
+        },
+        pt: {
+          title: "Caixa e créditos — Demaco",
+          meta: "Demaco · Set 2026",
+          summary: "Extensão de gestão de caixa e créditos: linhas de crédito de cliente, cobrança e previsão de fluxo de caixa.",
+          bullets: [
+            "Atribuição de linha de crédito e acompanhamento",
+            "Agenda de cobrança e alertas de inadimplência",
+            "Previsão de fluxo de caixa integrada ao Finance Pro"
+          ]
+        }
+      },
+      stack: ["Claude Code", "JDE E1", "Credit rules", "Cash forecasting"]
+    },
+
+    {
+      id: "yata-app",
+      category: ["sales", "ai"],
+      date: "2026",
+      lang: {
+        en: {
+          title: "Yata App — Product with dedicated design system",
+          meta: "Personal · Sep 2026",
+          summary: "Product app paired with its own Claude Design system (\"Yasta\") for a consistent visual language across screens.",
+          bullets: [
+            "Companion design system built in Claude Design",
+            "Reusable component tokens for the app UI",
+            "Active development"
+          ]
+        },
+        es: {
+          title: "Yata App — Producto con design system dedicado",
+          meta: "Personal · Sep 2026",
+          summary: "App de producto emparejada con su propio design system Claude Design (\"Yasta\") para un lenguaje visual consistente entre pantallas.",
+          bullets: [
+            "Design system compañero construido en Claude Design",
+            "Tokens de componentes reutilizables para la UI",
+            "Desarrollo activo"
+          ]
+        },
+        pt: {
+          title: "Yata App — Produto com design system dedicado",
+          meta: "Pessoal · Set 2026",
+          summary: "App de produto com design system próprio Claude Design (\"Yasta\") para linguagem visual consistente entre telas.",
+          bullets: [
+            "Design system companheiro construído em Claude Design",
+            "Tokens de componente reutilizáveis para a UI",
+            "Desenvolvimento ativo"
+          ]
+        }
+      },
+      stack: ["Claude Code", "Claude Design", "Design system"]
+    },
+
+    {
+      id: "rentatool",
+      category: ["construction"],
+      date: "2026",
+      lang: {
+        en: {
+          title: "Rentatool — Equipment rental platform",
+          meta: "Personal · Sep 2026",
+          summary: "Rental platform for construction and industrial equipment. Public repository.",
+          bullets: [
+            "Public repo · early stage",
+            "Rental catalog and availability calendar",
+            "Targeted at construction and industrial sectors"
+          ]
+        },
+        es: {
+          title: "Rentatool — Plataforma de renta de herramientas",
+          meta: "Personal · Sep 2026",
+          summary: "Plataforma de renta para herramienta de construcción e industrial. Repositorio público.",
+          bullets: [
+            "Repo público · etapa temprana",
+            "Catálogo de renta y calendario de disponibilidad",
+            "Enfocado en sectores construcción e industrial"
+          ]
+        },
+        pt: {
+          title: "Rentatool — Plataforma de aluguel de ferramentas",
+          meta: "Pessoal · Set 2026",
+          summary: "Plataforma de aluguel de ferramentas de construção e industriais. Repositório público.",
+          bullets: [
+            "Repo público · estágio inicial",
+            "Catálogo de aluguel e calendário de disponibilidade",
+            "Foco em construção e industrial"
+          ]
+        }
+      },
+      stack: ["Claude Code", "Rental logic", "Catalog"]
+    },
+
+    {
+      id: "promospin",
+      category: ["sales"],
+      date: "2026",
+      lang: {
+        en: {
+          title: "PromoSpin — Promotional campaign engine",
+          meta: "Demaco · Jun 2026",
+          summary: "Engine for running promotional campaigns: rule-based discounts, campaign scheduling, and results tracking.",
+          bullets: [
+            "Rule-based discount configuration",
+            "Campaign scheduling and rollout",
+            "Result tracking against sales KPIs"
+          ]
+        },
+        es: {
+          title: "PromoSpin — Motor de campañas promocionales",
+          meta: "Demaco · Jun 2026",
+          summary: "Motor para correr campañas promocionales: descuentos por reglas, programación de campañas y seguimiento de resultados.",
+          bullets: [
+            "Configuración de descuentos por reglas",
+            "Programación y rollout de campañas",
+            "Seguimiento de resultados vs KPIs de ventas"
+          ]
+        },
+        pt: {
+          title: "PromoSpin — Motor de campanhas promocionais",
+          meta: "Demaco · Jun 2026",
+          summary: "Motor para rodar campanhas promocionais: descontos por regras, agendamento de campanhas e acompanhamento de resultados.",
+          bullets: [
+            "Configuração de descontos por regras",
+            "Agendamento e rollout de campanhas",
+            "Acompanhamento de resultado vs KPIs de vendas"
+          ]
+        }
+      },
+      stack: ["Claude Code", "Promotion rules", "Campaign engine"]
     }
   ],
 
