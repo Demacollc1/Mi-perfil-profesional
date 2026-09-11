@@ -550,13 +550,13 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
 }
-.edu-block, .cert-block, .lang-block {
+.edu-block, .cert-block, .train-block, .lang-block {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 20px;
 }
-.edu-block h3, .cert-block h3, .lang-block h3 {
+.edu-block h3, .cert-block h3, .train-block h3, .lang-block h3 {
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.08em;

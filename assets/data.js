@@ -43,6 +43,7 @@ window.PROFILE_DATA = {
       "skills.lead": "Grouped by domain. Ordered by depth of experience.",
       "education.title": "Education & Certifications",
       "education.eduTitle": "Academic", "education.certTitle": "Certifications",
+      "education.trainTitle": "Courses & Training",
       "education.langTitle": "Languages",
       "contact.title": "Contact",
       "contact.lead": "For consulting, full-time roles, or content collaborations. I reply in EN, ES, or PT.",
@@ -94,6 +95,7 @@ window.PROFILE_DATA = {
       "skills.lead": "Agrupadas por dominio. Ordenadas por profundidad de experiencia.",
       "education.title": "Educación y Certificaciones",
       "education.eduTitle": "Académico", "education.certTitle": "Certificaciones",
+      "education.trainTitle": "Cursos y Capacitaciones",
       "education.langTitle": "Idiomas",
       "contact.title": "Contacto",
       "contact.lead": "Para consultorías, roles full-time o colaboraciones de contenido. Respondo en EN, ES o PT.",
@@ -145,6 +147,7 @@ window.PROFILE_DATA = {
       "skills.lead": "Agrupadas por domínio. Ordenadas por profundidade.",
       "education.title": "Formação e Certificações",
       "education.eduTitle": "Acadêmico", "education.certTitle": "Certificações",
+      "education.trainTitle": "Cursos e Capacitações",
       "education.langTitle": "Idiomas",
       "contact.title": "Contato",
       "contact.lead": "Para consultorias, vagas full-time ou colaborações de conteúdo. Respondo em EN, ES ou PT.",
@@ -1595,18 +1598,34 @@ window.PROFILE_DATA = {
   ],
 
   // ------------------------------------------------------------
-  // Certifications
+  // Certifications — issued by a recognized body
   // ------------------------------------------------------------
   certifications: [
-    "Scrum Master Certified",
     "Google Data Analytics Certificate",
     "Google Project Management Certificate",
-    "CAPM (PMI)",
-    "APICS CPIM",
-    "Lean Six Sigma (Green Belt)",
     "Certified Construction Manager",
-    "FMVA — Financial Modeling & Valuation Analyst (in progress)",
     "Florida Realtor License"
+  ],
+
+  // ------------------------------------------------------------
+  // Courses & training — approved coursework (not full certification)
+  // ------------------------------------------------------------
+  trainings: [
+    {
+      en: "Supply Chain Management — Automation & Integration",
+      es: "Supply Chain Management — Automatización e Integración",
+      pt: "Supply Chain Management — Automação e Integração"
+    },
+    {
+      en: "Lean Six Sigma Prep — Green & Black Belt",
+      es: "Preparación Lean Six Sigma — Green y Black Belt",
+      pt: "Preparação Lean Six Sigma — Green e Black Belt"
+    },
+    {
+      en: "PMI Certification Prep Course",
+      es: "Curso de Preparación para Certificación PMI",
+      pt: "Curso de Preparação para Certificação PMI"
+    }
   ],
 
   // ------------------------------------------------------------

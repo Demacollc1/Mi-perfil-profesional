@@ -38,6 +38,7 @@
     renderEducation(lang);
     renderLanguages(lang);
     renderCertifications();
+    renderTrainings(lang);
   }
 
   // ---- theme ----
@@ -234,6 +235,16 @@
     if (!list) return;
     list.innerHTML = "";
     data.certifications.forEach(c => list.appendChild(el("li", null, [c])));
+  }
+
+  function renderTrainings(lang) {
+    const list = document.getElementById("train-list");
+    if (!list) return;
+    list.innerHTML = "";
+    (data.trainings || []).forEach(t => {
+      const text = typeof t === "string" ? t : (t[lang] || t.en);
+      list.appendChild(el("li", null, [text]));
+    });
   }
 
   // ---- boot ----
