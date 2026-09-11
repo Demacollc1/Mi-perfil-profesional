@@ -38,7 +38,7 @@ window.PROFILE_DATA = {
       "projects.filter.tms": "Logistics / TMS", "projects.filter.sales": "Sales / CRM",
       "projects.filter.construction": "Construction",
       "experience.title": "Experience",
-      "experience.lead": "Consolidated timeline. Overlapping roles reflect operational + consulting responsibilities in parallel.",
+      "experience.lead": "Three concurrent roles: Operations Director at Demaco, Construction PM at Construbonanza, and Senior Consultant at Certifsa.",
       "skills.title": "Skills matrix",
       "skills.lead": "Grouped by domain. Ordered by depth of experience.",
       "education.title": "Education & Certifications",
@@ -89,7 +89,7 @@ window.PROFILE_DATA = {
       "projects.filter.tms": "Logística / TMS", "projects.filter.sales": "Ventas / CRM",
       "projects.filter.construction": "Construcción",
       "experience.title": "Experiencia",
-      "experience.lead": "Línea de tiempo consolidada. Los solapamientos reflejan roles operativos + consultoría en paralelo.",
+      "experience.lead": "Tres roles concurrentes: Director de Operaciones en Demaco, Construction PM en Construbonanza y Consultor Senior en Certifsa.",
       "skills.title": "Matriz de habilidades",
       "skills.lead": "Agrupadas por dominio. Ordenadas por profundidad de experiencia.",
       "education.title": "Educación y Certificaciones",
@@ -140,7 +140,7 @@ window.PROFILE_DATA = {
       "projects.filter.tms": "Logística / TMS", "projects.filter.sales": "Vendas / CRM",
       "projects.filter.construction": "Construção",
       "experience.title": "Experiência",
-      "experience.lead": "Linha do tempo consolidada. Sobreposições refletem papéis operacionais + consultoria em paralelo.",
+      "experience.lead": "Três papéis simultâneos: Diretor de Operações na Demaco, Construction PM na Construbonanza e Consultor Sênior na Certifsa.",
       "skills.title": "Matriz de habilidades",
       "skills.lead": "Agrupadas por domínio. Ordenadas por profundidade.",
       "education.title": "Formação e Certificações",
@@ -621,7 +621,7 @@ window.PROFILE_DATA = {
         en: {
           role: "Senior Business Consultant",
           company: "Certifsa S.A. · Guayaquil, Ecuador",
-          date: "Jan 2015 – Jul 2017",
+          date: "Jan 2015 – Present",
           bullets: [
             "Implemented JDE E1 9.1 Financials + SCM for Demaco Cia Ltda",
             "Participated in 2 additional JDE E1 9.1 rollouts in LATAM (retail + construction)",
@@ -631,7 +631,7 @@ window.PROFILE_DATA = {
         es: {
           role: "Senior Business Consultant",
           company: "Certifsa S.A. · Guayaquil, Ecuador",
-          date: "Ene 2015 – Jul 2017",
+          date: "Ene 2015 – Actualidad",
           bullets: [
             "Implementé JDE E1 9.1 Financials + SCM para Demaco Cia Ltda",
             "Participé en 2 rollouts adicionales de JDE E1 9.1 en LATAM (retail + construcción)",
@@ -641,7 +641,7 @@ window.PROFILE_DATA = {
         pt: {
           role: "Senior Business Consultant",
           company: "Certifsa S.A. · Guayaquil, Equador",
-          date: "Jan 2015 – Jul 2017",
+          date: "Jan 2015 – Atual",
           bullets: [
             "Implementei JDE E1 9.1 Financials + SCM para Demaco Cia Ltda",
             "Participei em 2 rollouts adicionais de JDE E1 9.1 na LATAM (varejo + construção)",
