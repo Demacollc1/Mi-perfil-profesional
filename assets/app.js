@@ -31,6 +31,12 @@
       const key = el.dataset.i18n;
       if (strings[key] != null) el.innerHTML = strings[key];
     });
+    // Attribute-based i18n: data-i18n-attr="placeholder|key" applies key's
+    // resolved string to the named attribute (used for search input placeholder).
+    document.querySelectorAll("[data-i18n-attr]").forEach(el => {
+      const [attr, key] = el.dataset.i18nAttr.split("|");
+      if (attr && key && strings[key] != null) el.setAttribute(attr, strings[key]);
+    });
 
     renderCapabilities(lang);
     renderProjects(lang, currentFilter);
@@ -60,13 +66,25 @@
   }
 
   function toggleTheme() {
-    const explicit = document.documentElement.getAttribute("data-theme");
+    // Suppress transitions across the theme swap so color/background/border/
+    // shadow don't smear all at once — better-ui recipe.
+    const root = document.documentElement;
+    root.classList.add("theme-switching");
+    // Force a reflow between add and remove.
+    void root.offsetHeight;
+
+    const explicit = root.getAttribute("data-theme");
     if (explicit === "dark") setTheme("light");
     else if (explicit === "light") setTheme("dark");
     else {
       const systemDark = matchMedia("(prefers-color-scheme: dark)").matches;
       setTheme(systemDark ? "light" : "dark");
     }
+
+    // Restore transitions on the next frame.
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => root.classList.remove("theme-switching"));
+    });
   }
 
   // ---- rendering ----
@@ -121,16 +139,20 @@
     if (!grid) return;
     grid.innerHTML = "";
     const cur = filter || "all";
+    const q = normalize(currentQuery).trim();
+
+    let visibleCount = 0;
 
     if (cur === "all") {
       // Grouped view: one section per category, projects sorted newest first.
       CAT_ORDER.forEach(cat => {
         const inCat = data.projects.filter(p => {
           const cats = Array.isArray(p.category) ? p.category : [p.category];
-          return cats.includes(cat);
+          return cats.includes(cat) && projectMatchesQuery(p, lang, q);
         }).sort((a, b) => (b.date || "").localeCompare(a.date || ""));
         if (inCat.length === 0) return;
 
+        visibleCount += inCat.length;
         const label = (CAT_LABEL[lang] || CAT_LABEL.en)[cat];
         grid.appendChild(el("div", { class: "cat-group" }, [
           el("h3", { class: "cat-title" }, [
@@ -146,14 +168,49 @@
       // Filtered view: flat grid of just that category.
       const inCat = data.projects.filter(p => {
         const cats = Array.isArray(p.category) ? p.category : [p.category];
-        return cats.includes(cur);
+        return cats.includes(cur) && projectMatchesQuery(p, lang, q);
       }).sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+      visibleCount = inCat.length;
       const flat = el("div", { class: "cat-grid" }, inCat.map(p => makeCard(p, lang)));
       grid.appendChild(flat);
     }
+
+    updateProjectCount(lang, visibleCount);
   }
 
   let currentFilter = "all";
+  let currentQuery = "";
+
+  function normalize(s) {
+    return (s || "").toString().toLowerCase()
+      .normalize("NFD").replace(/[̀-ͯ]/g, "");
+  }
+
+  function projectMatchesQuery(p, lang, q) {
+    if (!q) return true;
+    const t = p.lang[lang] || p.lang.en;
+    const cats = Array.isArray(p.category) ? p.category.join(" ") : (p.category || "");
+    const hay = [
+      p.id, cats, t.title, t.meta, t.summary,
+      (t.bullets || []).join(" "),
+      (p.stack || []).join(" ")
+    ].map(normalize).join(" ");
+    return q.split(/\s+/).filter(Boolean).every(term => hay.includes(term));
+  }
+
+  function updateProjectCount(lang, visible) {
+    const el = document.getElementById("project-count");
+    if (!el) return;
+    const strings = data.i18n[lang] || data.i18n.en;
+    let text;
+    if (visible === 0) text = strings["projects.count.zero"];
+    else if (visible === 1) text = strings["projects.count.one"];
+    else text = (strings["projects.count.many"] || "{n} projects").replace("{n}", visible);
+    el.textContent = text;
+    const empty = document.getElementById("project-empty");
+    if (empty) empty.hidden = visible !== 0;
+  }
+
   function applyProjectFilter(cat) {
     currentFilter = cat;
     const lang = document.documentElement.lang || "en";
@@ -286,6 +343,31 @@
     document.querySelectorAll(".filter-bar button").forEach(btn => {
       btn.addEventListener("click", () => applyProjectFilter(btn.dataset.filter));
     });
+
+    // Project search — debounced input handler + clear button
+    const searchInput = document.getElementById("project-search");
+    const searchClear = document.getElementById("project-search-clear");
+    if (searchInput) {
+      let debounceId = null;
+      searchInput.addEventListener("input", () => {
+        clearTimeout(debounceId);
+        debounceId = setTimeout(() => {
+          currentQuery = searchInput.value;
+          if (searchClear) searchClear.hidden = !currentQuery;
+          renderProjects(document.documentElement.lang || "en", currentFilter);
+        }, 120);
+      });
+    }
+    if (searchClear) {
+      searchClear.addEventListener("click", () => {
+        if (!searchInput) return;
+        searchInput.value = "";
+        currentQuery = "";
+        searchClear.hidden = true;
+        renderProjects(document.documentElement.lang || "en", currentFilter);
+        searchInput.focus();
+      });
+    }
 
     // Scroll reveal — one shot, section headers only.
     // Guarded by prefers-reduced-motion (CSS also flattens it).

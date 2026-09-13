@@ -128,16 +128,25 @@
       <div class="container">
         <h2 data-i18n="projects.title">Projects</h2>
         <p class="section-lead" data-i18n="projects.lead">Filter by category. Every card is a real project with measurable outcomes.</p>
-        <div class="filter-bar" role="tablist" aria-label="Project filters">
-          <button data-filter="all" class="active" data-i18n="projects.filter.all">All</button>
-          <button data-filter="ai" data-i18n="projects.filter.ai">AI & Claude</button>
-          <button data-filter="erp" data-i18n="projects.filter.erp">JD Edwards / ERP</button>
-          <button data-filter="bi" data-i18n="projects.filter.bi">BI & Analytics</button>
-          <button data-filter="tms" data-i18n="projects.filter.tms">Logistics / TMS</button>
-          <button data-filter="sales" data-i18n="projects.filter.sales">Sales / CRM</button>
-          <button data-filter="construction" data-i18n="projects.filter.construction">Construction</button>
+        <div class="projects-toolbar">
+          <div class="filter-bar" role="tablist" aria-label="Project filters">
+            <button data-filter="all" class="active" data-i18n="projects.filter.all">All</button>
+            <button data-filter="ai" data-i18n="projects.filter.ai">AI & Claude</button>
+            <button data-filter="erp" data-i18n="projects.filter.erp">JD Edwards / ERP</button>
+            <button data-filter="bi" data-i18n="projects.filter.bi">BI & Analytics</button>
+            <button data-filter="tms" data-i18n="projects.filter.tms">Logistics / TMS</button>
+            <button data-filter="sales" data-i18n="projects.filter.sales">Sales / CRM</button>
+            <button data-filter="construction" data-i18n="projects.filter.construction">Construction</button>
+          </div>
+          <label class="project-search" aria-label="Search projects">
+            <span class="project-search-icon" aria-hidden="true">⌕</span>
+            <input type="search" id="project-search" placeholder="Search projects…" data-i18n-attr="placeholder|projects.searchPlaceholder" autocomplete="off" spellcheck="false">
+            <button type="button" class="project-search-clear" id="project-search-clear" aria-label="Clear search" hidden>×</button>
+          </label>
         </div>
+        <p class="project-count" id="project-count" role="status" aria-live="polite"></p>
         <div class="projects-grid" id="projects-grid"></div>
+        <p class="project-empty" id="project-empty" hidden data-i18n="projects.empty">No projects match this filter and search.</p>
       </div>
     </section>
 

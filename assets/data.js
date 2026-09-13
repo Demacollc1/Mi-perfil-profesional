@@ -40,6 +40,11 @@ window.PROFILE_DATA = {
       "projects.filter.erp": "JD Edwards / ERP", "projects.filter.bi": "BI & Analytics",
       "projects.filter.tms": "Logistics / TMS", "projects.filter.sales": "Sales / CRM",
       "projects.filter.construction": "Construction",
+      "projects.searchPlaceholder": "Search by keyword — Pick-to-Light, RAG, Tableau, JDE, MCP…",
+      "projects.empty": "No projects match this filter and search.",
+      "projects.count.zero": "No projects",
+      "projects.count.one": "1 project",
+      "projects.count.many": "{n} projects",
       "experience.title": "Experience",
       "experience.lead": "Three concurrent roles: Operations Director at Demaco, Construction PM at Construbonanza, and Senior Consultant at Certifsa.",
       "skills.title": "Skills matrix",
@@ -95,6 +100,11 @@ window.PROFILE_DATA = {
       "projects.filter.erp": "JD Edwards / ERP", "projects.filter.bi": "BI y Analítica",
       "projects.filter.tms": "Logística / TMS", "projects.filter.sales": "Ventas / CRM",
       "projects.filter.construction": "Construcción",
+      "projects.searchPlaceholder": "Buscar por palabra clave — Pick-to-Light, RAG, Tableau, JDE, MCP…",
+      "projects.empty": "Ningún proyecto coincide con este filtro y búsqueda.",
+      "projects.count.zero": "Ningún proyecto",
+      "projects.count.one": "1 proyecto",
+      "projects.count.many": "{n} proyectos",
       "experience.title": "Experiencia",
       "experience.lead": "Tres roles concurrentes: Director de Operaciones en Demaco, Construction PM en Construbonanza y Consultor Senior en Certifsa.",
       "skills.title": "Matriz de habilidades",
@@ -150,6 +160,11 @@ window.PROFILE_DATA = {
       "projects.filter.erp": "JD Edwards / ERP", "projects.filter.bi": "BI e Analytics",
       "projects.filter.tms": "Logística / TMS", "projects.filter.sales": "Vendas / CRM",
       "projects.filter.construction": "Construção",
+      "projects.searchPlaceholder": "Buscar por palavra-chave — Pick-to-Light, RAG, Tableau, JDE, MCP…",
+      "projects.empty": "Nenhum projeto corresponde a este filtro e busca.",
+      "projects.count.zero": "Nenhum projeto",
+      "projects.count.one": "1 projeto",
+      "projects.count.many": "{n} projetos",
       "experience.title": "Experiência",
       "experience.lead": "Três papéis simultâneos: Diretor de Operações na Demaco, Construction PM na Construbonanza e Consultor Sênior na Certifsa.",
       "skills.title": "Matriz de habilidades",
@@ -1336,6 +1351,88 @@ window.PROFILE_DATA = {
             "Fluxos N8N conectando ERP, CRM e logística",
             "Ollama para inferência LLM on-premise (WhatsApp, Bitrix24)",
             "Prompt engineering, design de agentes de IA, sistemas de avaliação"
+          ]
+        }
+      }
+    },
+    {
+      icon: "▤",
+      lang: {
+        en: {
+          title: "Business Intelligence & Tableau",
+          items: [
+            "Enterprise Tableau architecture integrated with JD Edwards, Drivin TMS, Bitrix24 CRM and Inalambrik — real-time KPIs across finance, sales, operations, logistics and marketing",
+            "Financial dashboards: P&L, cash flow, bank reconciliation, AR aging, payment planning under a flexible chart of accounts",
+            "Commercial dashboards: sales by branch, salesperson, category and channel; margin analysis; COOP marketing ROI",
+            "Supply-chain dashboards: warehouse service level, supplier performance, OTD, OTIF, IS, cost per route, load factor by weight and volume",
+            "Executive dashboards: strategic KPI stack surfaced to shareholders on a single glass",
+            "18+ Tableau workbooks in production covering finance, sales, logistics and BI oversight for the AI transformation program"
+          ]
+        },
+        es: {
+          title: "Inteligencia de Negocios y Tableau",
+          items: [
+            "Arquitectura Tableau empresarial integrada con JD Edwards, Drivin TMS, Bitrix24 CRM e Inalambrik — KPI en tiempo real en finanzas, ventas, operaciones, logística y marketing",
+            "Dashboards financieros: P&L, flujo de caja, conciliación bancaria, edades de cartera, planeación de pagos sobre plan de cuentas flexible",
+            "Dashboards comerciales: ventas por sucursal, vendedor, categoría y canal; análisis de margen; ROI de COOP marketing",
+            "Dashboards de supply chain: nivel de servicio bodega, performance de proveedores, OTD, OTIF, IS, costo por ruta, factor de carga por peso y volumen",
+            "Dashboards ejecutivos: KPI stack estratégico presentado a accionistas en un solo tablero",
+            "18+ workbooks Tableau en producción cubriendo finanzas, ventas, logística y BI sobre el programa de transformación con IA"
+          ]
+        },
+        pt: {
+          title: "Business Intelligence e Tableau",
+          items: [
+            "Arquitetura Tableau corporativa integrada a JD Edwards, Drivin TMS, Bitrix24 CRM e Inalambrik — KPIs em tempo real em finanças, vendas, operações, logística e marketing",
+            "Dashboards financeiros: P&L, fluxo de caixa, conciliação bancária, aging de recebíveis, planejamento de pagamentos sobre plano de contas flexível",
+            "Dashboards comerciais: vendas por filial, vendedor, categoria e canal; análise de margem; ROI de verbas COOP",
+            "Dashboards de supply chain: nível de serviço do armazém, performance de fornecedores, OTD, OTIF, IS, custo por rota, fator de carga por peso e volume",
+            "Dashboards executivos: KPI stack estratégico apresentado aos acionistas em um único painel",
+            "18+ workbooks Tableau em produção cobrindo finanças, vendas, logística e BI sobre o programa de transformação com IA"
+          ]
+        }
+      }
+    },
+    {
+      icon: "$",
+      lang: {
+        en: {
+          title: "Finance & Administration",
+          items: [
+            "Full P&L ownership of a US$ 35M+ distribution business — revenue, cost of goods, opex, and net margin governed monthly at shareholder level",
+            "Flexible chart of accounts designed and implemented — powers real-time financial reporting and multi-dimensional profitability",
+            "Cash flow, treasury, and bank reconciliation — daily cash income control, cash closings, bank matching and payment planning",
+            "Accounts receivable, credit lines and collection agenda — automated aging and delinquency alerts fed to sales and credit teams",
+            "Job Cost and construction cost control — 100% elimination of manual spreadsheets on construction and project-based sales",
+            "Payroll administration, HR compliance, and labor-law rule engine — integrated with JDE and internal apps",
+            "Import cost management — FOB tracking, customs, cost allocation, and Avalara / Vertex tax compliance (90% error reduction)",
+            "Financial modeling: FMVA (in progress), Excel advanced, scenario analysis and executive reporting to shareholder group"
+          ]
+        },
+        es: {
+          title: "Administración y Finanzas",
+          items: [
+            "P&L completo de un negocio de distribución de US$ 35M+ — ingresos, costo de ventas, opex y margen neto gobernados mensualmente a nivel de accionistas",
+            "Plan de cuentas flexible diseñado e implementado — habilita reporting financiero en tiempo real y rentabilidad multi-dimensional",
+            "Flujo de caja, tesorería y conciliación bancaria — control diario de caja, cierres, matching bancario y planeación de pagos",
+            "Cuentas por cobrar, líneas de crédito y agenda de cobranza — aging automatizado y alertas de mora alimentadas a ventas y crédito",
+            "Job Cost y control de costos de construcción — 100% de eliminación de hojas de cálculo manuales en construcción y ventas por proyecto",
+            "Administración de nómina, cumplimiento RRHH y motor de reglas laborales — integrado con JDE y aplicaciones internas",
+            "Gestión de costos de importación — tracking FOB, aduanas, prorrateo y cumplimiento Avalara / Vertex (90% de reducción de errores)",
+            "Modelado financiero: FMVA (en curso), Excel avanzado, análisis de escenarios y reporting ejecutivo al grupo de accionistas"
+          ]
+        },
+        pt: {
+          title: "Administração e Finanças",
+          items: [
+            "P&L completo de um negócio de distribuição de US$ 35M+ — receita, custo de mercadoria, opex e margem líquida governados mensalmente no nível de acionistas",
+            "Plano de contas flexível desenhado e implantado — habilita reporting financeiro em tempo real e rentabilidade multi-dimensional",
+            "Fluxo de caixa, tesouraria e conciliação bancária — controle diário de caixa, fechamentos, matching bancário e planejamento de pagamentos",
+            "Contas a receber, linhas de crédito e agenda de cobrança — aging automatizado e alertas de inadimplência alimentando vendas e crédito",
+            "Job Cost e controle de custos de construção — 100% de eliminação de planilhas manuais em construção e vendas por projeto",
+            "Administração de folha, compliance de RH e motor de regras trabalhistas — integrado ao JDE e apps internos",
+            "Gestão de custos de importação — tracking FOB, aduanas, rateio e compliance Avalara / Vertex (90% de redução de erros)",
+            "Modelagem financeira: FMVA (em curso), Excel avançado, análise de cenários e reporting executivo ao grupo de acionistas"
           ]
         }
       }

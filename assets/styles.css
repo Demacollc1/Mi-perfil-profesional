@@ -406,12 +406,96 @@ body {
   background: var(--accent);
 }
 
+/* Projects toolbar (filter + search) */
+.projects-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
+  margin-bottom: 12px;
+}
+.project-search {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 260px;
+  flex: 1 1 260px;
+  max-width: 380px;
+  padding: 0 10px 0 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  /* Concentric radius: outer = inner + padding. Match filter chip radius. */
+  border-radius: 999px;
+  color: var(--text-muted);
+  transition:
+    border-color var(--dur-hover) ease,
+    box-shadow var(--dur-hover) ease,
+    background var(--dur-hover) ease;
+}
+.project-search:focus-within {
+  border-color: var(--accent);
+  background: var(--surface);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+.project-search-icon {
+  font-size: 14px;
+  line-height: 1;
+  color: var(--text-muted);
+  transform: translateY(-0.5px);
+}
+.project-search input {
+  flex: 1;
+  border: 0;
+  background: transparent;
+  outline: 0;
+  padding: 8px 4px;
+  font: inherit;
+  font-size: 13px;
+  color: var(--text);
+  min-width: 0;
+}
+.project-search input::-webkit-search-cancel-button { display: none; }
+.project-search input::placeholder { color: var(--text-muted); opacity: 0.85; }
+.project-search-clear {
+  border: 0;
+  background: var(--surface-alt);
+  color: var(--text-muted);
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  padding: 0;
+  line-height: 18px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background var(--dur-hover) ease, color var(--dur-hover) ease, transform var(--dur-press) var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .project-search-clear:hover { background: var(--border); color: var(--text); }
+}
+.project-search-clear:active { transform: scale(0.96); }
+
+.project-count {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin: 0 0 16px;
+}
+.project-empty {
+  padding: 24px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+}
+
 /* Filter bar */
 .filter-bar {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 24px;
+  margin-bottom: 0;
 }
 .filter-bar button {
   border: 1px solid var(--border);
@@ -422,10 +506,12 @@ body {
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
+  /* Only what changes — never `transition: all`. */
   transition:
     color var(--dur-hover) ease,
     background var(--dur-hover) ease,
-    border-color var(--dur-hover) ease;
+    border-color var(--dur-hover) ease,
+    transform var(--dur-press) var(--ease-out);
 }
 @media (hover: hover) and (pointer: fine) {
   .filter-bar button:hover {
@@ -433,6 +519,8 @@ body {
     border-color: var(--accent);
   }
 }
+/* Scale on press = 0.96, per better-ui (never below 0.95). */
+.filter-bar button:active { transform: scale(0.96); }
 .filter-bar button.active {
   background: var(--navy-900);
   color: #fff;
@@ -844,6 +932,33 @@ body {
   .btn:active { transform: none; }
   .pillar:hover, .project-card:hover { transform: none; }
   * { animation-duration: 1ms !important; transition-duration: 1ms !important; }
+}
+
+/* Better-UI polish additions */
+
+/* Images always carry a low-opacity outline for consistent depth on any
+   surface. Pure black in light, pure white in dark — never a tinted neutral. */
+img {
+  outline: 1px solid rgba(0, 0, 0, 0.10);
+  outline-offset: -1px;
+}
+[data-theme="dark"] img {
+  outline: 1px solid rgba(255, 255, 255, 0.10);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) img {
+    outline: 1px solid rgba(255, 255, 255, 0.10);
+  }
+}
+
+/* Suppress transitions during theme swap so color/background/border/shadow
+   don't smear all at once. app.js adds .theme-switching briefly. */
+.theme-switching,
+.theme-switching *,
+.theme-switching *::before,
+.theme-switching *::after {
+  transition: none !important;
+  animation: none !important;
 }
 
 /* Print */
