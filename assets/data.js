@@ -17,6 +17,7 @@ window.PROFILE_DATA = {
       "hero.name": "Roberth Ernesto Gomez Da Silva",
       "hero.role1": "Operations Director", "hero.role2": "JD Edwards Expert",
       "hero.role3": "AI & Automation", "hero.role4": "Civil Engineer",
+      "hero.badge": "AI-augmented executive — I ship with a team of AI assistants bundled in.",
       "hero.lede": "15+ years leading digital transformation across LATAM and the U.S. — from $1M+ ERP rollouts to production AI agents integrated with real business systems. I turn founder vision into operational execution.",
       "hero.m1": "Annual revenue managed", "hero.m2": "Employees · 9 branches",
       "hero.m3": "Years leading operations", "hero.m4": "Languages",
@@ -26,7 +27,7 @@ window.PROFILE_DATA = {
       "value.p1.title": "ERP & Enterprise Systems",
       "value.p1.body": "JD Edwards E1 (9.1/9.2) SME. 10+ years leading upgrades, rollouts, and integrations across Finance, SCM, WMS, TMS, HR, and Sales Order. Orchestrator, UX One, BI Publisher, EDI X12, Avalara/Vertex.",
       "value.p2.title": "AI & Automation",
-      "value.p2.body": "Claude Code · Claude Cowork · N8N · RAG databases · MCP servers. I build production AI agents integrated with ERP, CRM, and logistics — not demos, real business workflows.",
+      "value.p2.body": "Claude Code · Claude Cowork · N8N · RAG databases · MCP servers. I build production AI agents integrated with ERP, CRM, and logistics — not demos, real business workflows. I also run a personal AI-augmented toolkit — hire me and you get an executive with a team of assistants bundled in.",
       "value.p3.title": "Operations & Strategy",
       "value.p3.body": "Full P&L responsibility over a $35M+ distribution business: sales, marketing, warehousing, fleet, imports, credit, finance. Scrum, Lean Six Sigma, SOX/ITGC, KPI/BI.",
       "value.p4.title": "Civil Engineering & Real Estate",
@@ -71,6 +72,7 @@ window.PROFILE_DATA = {
       "hero.name": "Roberth Ernesto Gomez Da Silva",
       "hero.role1": "Director de Operaciones", "hero.role2": "Experto JD Edwards",
       "hero.role3": "IA y Automatización", "hero.role4": "Ingeniero Civil",
+      "hero.badge": "Ejecutivo potenciado por IA — entrego con un equipo de asistentes atados en un bundle.",
       "hero.lede": "15+ años liderando transformación digital en LATAM y EE.UU. — desde despliegues ERP de $1M+ hasta agentes de IA en producción integrados con sistemas de negocio reales. Traduzco la visión del fundador en ejecución operativa.",
       "hero.m1": "Ingresos anuales gestionados", "hero.m2": "Empleados · 9 sucursales",
       "hero.m3": "Años liderando operaciones", "hero.m4": "Idiomas",
@@ -80,7 +82,7 @@ window.PROFILE_DATA = {
       "value.p1.title": "ERP y Sistemas Empresariales",
       "value.p1.body": "SME en JD Edwards E1 (9.1/9.2). 10+ años liderando upgrades, roll-outs e integraciones en Finance, SCM, WMS, TMS, RRHH y Sales Order. Orchestrator, UX One, BI Publisher, EDI X12, Avalara/Vertex.",
       "value.p2.title": "IA y Automatización",
-      "value.p2.body": "Claude Code · Claude Cowork · N8N · bases RAG · servidores MCP. Construyo agentes de IA en producción integrados con ERP, CRM y logística — no demos, workflows reales de negocio.",
+      "value.p2.body": "Claude Code · Claude Cowork · N8N · bases RAG · servidores MCP. Construyo agentes de IA en producción integrados con ERP, CRM y logística — no demos, workflows reales. Además opero mi propio toolkit personal potenciado por IA — contratarme es tener un ejecutivo con un equipo de asistentes atados en un bundle.",
       "value.p3.title": "Operaciones y Estrategia",
       "value.p3.body": "P&L completo de un negocio de distribución de $35M+: ventas, marketing, bodega, flota, importaciones, crédito y finanzas. Scrum, Lean Six Sigma, SOX/ITGC, KPI/BI.",
       "value.p4.title": "Ingeniería Civil y Bienes Raíces",
@@ -125,6 +127,7 @@ window.PROFILE_DATA = {
       "hero.name": "Roberth Ernesto Gomez Da Silva",
       "hero.role1": "Diretor de Operações", "hero.role2": "Especialista JD Edwards",
       "hero.role3": "IA e Automação", "hero.role4": "Engenheiro Civil",
+      "hero.badge": "Executivo potencializado por IA — entrego com uma equipe de assistentes empacotada em um bundle.",
       "hero.lede": "15+ anos liderando transformação digital na LATAM e EUA — de rollouts de ERP de $1M+ a agentes de IA em produção integrados com sistemas reais de negócio. Transformo a visão do fundador em execução operacional.",
       "hero.m1": "Receita anual gerida", "hero.m2": "Colaboradores · 9 filiais",
       "hero.m3": "Anos liderando operações", "hero.m4": "Idiomas",
@@ -134,7 +137,7 @@ window.PROFILE_DATA = {
       "value.p1.title": "ERP e Sistemas Corporativos",
       "value.p1.body": "SME em JD Edwards E1 (9.1/9.2). 10+ anos liderando upgrades, rollouts e integrações em Financeiro, SCM, WMS, TMS, RH e Sales Order. Orchestrator, UX One, BI Publisher, EDI X12, Avalara/Vertex.",
       "value.p2.title": "IA e Automação",
-      "value.p2.body": "Claude Code · Claude Cowork · N8N · bases RAG · servidores MCP. Construo agentes de IA em produção integrados com ERP, CRM e logística — não demos, workflows reais.",
+      "value.p2.body": "Claude Code · Claude Cowork · N8N · bases RAG · servidores MCP. Construo agentes de IA em produção integrados com ERP, CRM e logística — não demos, workflows reais. Também opero meu próprio toolkit pessoal potencializado por IA — me contratar é ter um executivo com uma equipe de assistentes empacotada em um bundle.",
       "value.p3.title": "Operações e Estratégia",
       "value.p3.body": "P&L completo de um negócio de distribuição de $35M+: vendas, marketing, armazém, frota, importações, crédito e finanças. Scrum, Lean Six Sigma, SOX/ITGC, KPI/BI.",
       "value.p4.title": "Engenharia Civil e Imóveis",
@@ -1333,6 +1336,44 @@ window.PROFILE_DATA = {
             "Fluxos N8N conectando ERP, CRM e logística",
             "Ollama para inferência LLM on-premise (WhatsApp, Bitrix24)",
             "Prompt engineering, design de agentes de IA, sistemas de avaliação"
+          ]
+        }
+      }
+    },
+    {
+      icon: "★",
+      lang: {
+        en: {
+          title: "AI-Augmented Executive",
+          items: [
+            "Personal productivity toolkit — a bundled team of AI assistants tailored to my daily work",
+            "Custom Claude Code skills, subagents and dispatchers that turn recurring executive tasks into one-line invocations",
+            "Runs across email, calendar, docs, spreadsheets, CRM, ERP and BI without context-switching",
+            "Ship faster: memos, decision docs, financial models, meeting prep, market research, and follow-up",
+            "Delegation cost near zero — no hiring, no onboarding, no PTO",
+            "Hire me and you get an executive with a team of assistants bundled in"
+          ]
+        },
+        es: {
+          title: "Ejecutivo Potenciado por IA",
+          items: [
+            "Toolkit personal de productividad — un equipo de asistentes IA hechos a la medida de mi día a día",
+            "Skills, subagentes y dispatchers custom en Claude Code que convierten tareas ejecutivas recurrentes en invocaciones de una sola línea",
+            "Corre sobre email, calendario, docs, hojas, CRM, ERP y BI sin cambiar de contexto",
+            "Entrego más rápido: memos, docs de decisión, modelos financieros, prep de reuniones, research, follow-ups",
+            "Costo de delegación cercano a cero — sin contratar, sin onboarding, sin PTO",
+            "Contratarme es tener un ejecutivo con un equipo de asistentes atados en un bundle"
+          ]
+        },
+        pt: {
+          title: "Executivo Potencializado por IA",
+          items: [
+            "Toolkit pessoal de produtividade — uma equipe de assistentes de IA feita sob medida para meu dia a dia",
+            "Skills, subagentes e dispatchers custom no Claude Code que transformam tarefas executivas recorrentes em invocações de uma única linha",
+            "Roda em e-mail, calendário, docs, planilhas, CRM, ERP e BI sem trocar de contexto",
+            "Entrego mais rápido: memos, docs de decisão, modelos financeiros, prep de reuniões, pesquisa, follow-ups",
+            "Custo de delegação próximo de zero — sem contratação, sem onboarding, sem férias",
+            "Me contratar é ter um executivo com uma equipe de assistentes empacotada em um bundle"
           ]
         }
       }

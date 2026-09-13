@@ -208,6 +208,26 @@ body {
   align-items: center;
 }
 .role-line .sep { color: var(--accent); opacity: 0.7; }
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  color: var(--accent-soft);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 0 0 24px;
+  max-width: 780px;
+}
+.hero-badge .badge-dot {
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 700;
+}
 .lede {
   font-size: 17px;
   line-height: 1.6;
